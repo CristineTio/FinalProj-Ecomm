@@ -1,0 +1,228 @@
+/*
+  Coconut Coir E-Commerce — Shared styles.
+  Tailwind handles most layout; this file adds a cohesive dark/gradient system,
+  consistent focus/hover motion, and a few utility helpers.
+*/
+
+:root{
+  --bg0:#07080c;
+  --bg1:#0b0d14;
+  --panel: rgba(255,255,255,.04);
+  --panel2: rgba(255,255,255,.06);
+  --stroke: rgba(255,255,255,.08);
+  --stroke2: rgba(255,255,255,.12);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.68);
+  --muted2: rgba(255,255,255,.52);
+  --shadow: 0 12px 40px rgba(0,0,0,.45);
+  --shadow2: 0 20px 70px rgba(0,0,0,.55);
+  --glow: 0 0 0 1px rgba(255,255,255,.08), 0 18px 55px rgba(255, 64, 0, .18);
+  --gradA: linear-gradient(135deg, rgba(255,56,0,.95), rgba(255,140,0,.92) 55%, rgba(255,0,92,.85));
+  --gradB: linear-gradient(135deg, rgba(255,89,0,.75), rgba(255,0,92,.55));
+  --gradC: radial-gradient(900px 500px at 20% 10%, rgba(255,90,0,.30), transparent 60%),
+           radial-gradient(700px 500px at 90% 0%, rgba(255,0,92,.22), transparent 55%),
+           radial-gradient(600px 500px at 60% 110%, rgba(255,150,0,.18), transparent 55%),
+           linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+html, body{
+  height: 100%;
+  background: var(--gradC);
+  color: var(--text);
+}
+
+/* Keep motion subtle; respect user preference. */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+
+.container-safe{
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.surface{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.surface-2{
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--stroke);
+}
+
+.hairline{
+  border-color: var(--stroke);
+}
+
+.grad-text{
+  background: var(--gradA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: 9999px;
+  padding: .75rem 1rem;
+  font-weight: 650;
+  letter-spacing: .01em;
+  line-height: 1;
+  transition: transform .16s ease, box-shadow .16s ease, filter .16s ease, background .16s ease;
+  outline: none;
+}
+
+.btn:focus-visible{
+  box-shadow: 0 0 0 3px rgba(255, 130, 0, .22), 0 0 0 1px rgba(255,255,255,.10) inset;
+}
+
+.btn-primary{
+  background: var(--gradA);
+  color: #140803;
+  box-shadow: 0 18px 45px rgba(255, 80, 0, .18);
+}
+.btn-primary:hover{ transform: translateY(-1px); filter: saturate(1.05); box-shadow: var(--shadow2); }
+.btn-primary:active{ transform: translateY(0); filter: saturate(.98); }
+
+.btn-ghost{
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+}
+.btn-ghost:hover{ transform: translateY(-1px); border-color: var(--stroke2); background: rgba(255,255,255,.06); }
+.btn-ghost:active{ transform: translateY(0); }
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  padding: .35rem .6rem;
+  font-size: .80rem;
+}
+
+.field{
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.03);
+  padding: .75rem .9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color .16s ease, box-shadow .16s ease, background .16s ease;
+}
+.field:focus{
+  border-color: rgba(255, 138, 0, .55);
+  box-shadow: 0 0 0 4px rgba(255, 138, 0, .14);
+  background: rgba(255,255,255,.04);
+}
+.field::placeholder{ color: rgba(255,255,255,.38); }
+
+.link{
+  color: rgba(255,180,120,.9);
+  text-decoration: none;
+}
+.link:hover{ color: rgba(255,220,190,.95); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+.card{
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+  border-color: var(--stroke2);
+}
+
+.glow-ring{
+  box-shadow: var(--glow);
+}
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 1.25rem;
+}
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+}
+
+.reveal{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-glow{
+  position: absolute;
+  inset: -120px -60px auto -60px;
+  height: 260px;
+  background: radial-gradient(400px 220px at 30% 30%, rgba(255,90,0,.45), transparent 65%),
+              radial-gradient(380px 240px at 75% 30%, rgba(255,0,92,.32), transparent 68%);
+  filter: blur(10px);
+  pointer-events: none;
+  opacity: .9;
+}
+
+.noise{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .045;
+  mix-blend-mode: overlay;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+.skip-link{
+  position: absolute;
+  left: 1rem;
+  top: .75rem;
+  transform: translateY(-140%);
+  transition: transform .2s ease;
+  z-index: 1000;
+}
+.skip-link:focus{ transform: translateY(0); }
+
+.kbd{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: .78rem;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.03);
+  border-bottom-color: rgba(255,255,255,.16);
+  padding: .15rem .35rem;
+  border-radius: .5rem;
+  color: rgba(255,255,255,.8);
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

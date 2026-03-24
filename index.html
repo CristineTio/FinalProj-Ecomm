@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Coconut Coir Co. — dark-themed e-commerce prototype for coconut coir products." />
+    <title>Coconut Coir Co. — Home</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["ui-sans-serif", "system-ui", "Segoe UI", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-sans selection:bg-orange-500/30 selection:text-white">
+    <header data-cc-nav></header>
+
+    <main id="main">
+      <section class="container-safe pt-6 pb-10">
+        <div class="hero-grid items-stretch">
+          <div class="surface rounded-[2rem] p-7 md:p-10 relative overflow-hidden reveal">
+            <div class="absolute inset-0 pointer-events-none opacity-60" aria-hidden="true"
+              style="background:
+                radial-gradient(800px 320px at 20% 20%, rgba(255,90,0,.25), transparent 65%),
+                radial-gradient(620px 320px at 90% 30%, rgba(255,0,92,.18), transparent 60%);">
+            </div>
+
+            <div class="relative">
+              <div class="chip">Sustainable • Washed • High-porosity</div>
+              <h1 class="mt-5 text-4xl md:text-6xl font-black tracking-tight leading-[1.02]">
+                Coconut coir, <span class="grad-text">reimagined</span> for precision growing.
+              </h1>
+              <p class="mt-5 text-white/70 text-lg max-w-2xl">
+                A natural, eco-friendly growing medium made from coconut husks, designed to improve soil structure, retain moisture, and support healthy root development.
+              </p>
+
+              <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                <a class="btn btn-primary py-4 px-7" href="storefront.html" aria-label="Browse products">
+                  Browse Storefront
+                </a>
+                <a class="btn btn-ghost py-4 px-7" href="login.html" aria-label="Sign in or register">
+                  Login / Register
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface rounded-[2rem] p-6 md:p-8 reveal">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-white/55 text-sm">Product showcase</div>
+                <h2 class="mt-2 text-2xl font-bold tracking-tight">Featured essentials</h2>
+              </div>
+              <a class="btn btn-ghost py-3 px-5" href="storefront.html">View all</a>
+            </div>
+            <p class="mt-3 text-white/65">
+              Premium washed and buffered coir for consistent moisture, clean handling, and strong root health.
+            </p>
+            <div class="mt-6 grid gap-3">
+              <div class="surface-2 rounded-2xl p-4 border hairline">
+                <div class="text-xs text-white/55">Water Retention Rate</div>
+                <div class="mt-1 font-semibold">Retains up to 8–9x its weight in water</div>
+              </div>
+              <div class="surface-2 rounded-2xl p-4 border hairline">
+                <div class="text-xs text-white/55">Air Porosity</div>
+                <div class="mt-1 font-semibold">High oxygen flow to prevent root suffocation</div>
+              </div>
+              <div class="surface-2 rounded-2xl p-4 border hairline">
+                <div class="text-xs text-white/55">EC Level</div>
+                <div class="mt-1 font-semibold">Low EC for safe and stable nutrient control</div>
+              </div>
+            </div>
+            <div class="mt-6 surface-2 rounded-2xl p-4 border hairline">
+              <div class="text-white/60 text-sm">CTA</div>
+              <div class="mt-2 flex flex-col sm:flex-row gap-3">
+                <a class="btn btn-primary flex-1 py-4" href="cart.html">Go to cart</a>
+                <a class="btn btn-ghost flex-1 py-4" href="transactions.html">Transactions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-safe pb-12">
+        <div class="flex items-end justify-between gap-4 reveal">
+          <div>
+            <div class="text-white/55 text-sm">Featured products</div>
+            <h2 class="mt-2 text-3xl font-black tracking-tight">Shop the lineup</h2>
+          </div>
+          <div class="hidden md:block text-white/60 max-w-md">
+            Purpose-built formats for hydroponics, potting mixes, and soil conditioning.
+          </div>
+        </div>
+
+        <div class="mt-7 grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-cc-featured></div>
+      </section>
+
+      <section class="container-safe pb-14">
+        <div class="surface rounded-[2rem] p-7 md:p-10 reveal">
+          <div class="grid lg:grid-cols-3 gap-8 items-start">
+            <div>
+              <div class="text-white/55 text-sm">Testimonials</div>
+              <h2 class="mt-2 text-3xl font-black tracking-tight">Built for consistency</h2>
+              <p class="mt-3 text-white/65">
+                Placeholder quotes that demonstrate hierarchy, spacing, and a calm premium tone.
+              </p>
+            </div>
+            <div class="lg:col-span-2 grid md:grid-cols-2 gap-4">
+              <figure class="surface-2 rounded-2xl p-6 border hairline">
+                <blockquote class="text-white/80 leading-relaxed">
+                  “The structure stays airy even after heavy watering — roots look happier, faster.”
+                </blockquote>
+                <figcaption class="mt-4 text-white/55 text-sm">A. Reyes • Urban Gardener</figcaption>
+              </figure>
+              <figure class="surface-2 rounded-2xl p-6 border hairline">
+                <blockquote class="text-white/80 leading-relaxed">
+                  “Clean, consistent coir. The UI feels premium and the flows are surprisingly smooth.”
+                </blockquote>
+                <figcaption class="mt-4 text-white/55 text-sm">M. Santos • Nursery Lead</figcaption>
+              </figure>
+              <figure class="surface-2 rounded-2xl p-6 border hairline md:col-span-2">
+                <blockquote class="text-white/80 leading-relaxed">
+                  “Dark theme with high-contrast gradients makes CTAs pop without looking noisy. Love the minimal grid.”
+                </blockquote>
+                <figcaption class="mt-4 text-white/55 text-sm">J. Kim • Product Designer</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer data-cc-footer></footer>
+
+    <script type="module">
+      import { initPage } from "./app.js";
+      import { mountHome } from "./home.js";
+      mountHome();
+      initPage();
+    </script>
+  </body>
+</html>
+

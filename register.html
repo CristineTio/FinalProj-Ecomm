@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Registration — create an account for faster checkout." />
+    <title>Coconut Coir Co. — Registration</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: { extend: { fontFamily: { sans: ["ui-sans-serif", "system-ui", "Segoe UI", "Inter", "sans-serif"] } } },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-sans selection:bg-orange-500/30 selection:text-white">
+    <header data-cc-nav></header>
+
+    <main id="main" class="container-safe pt-6 pb-14">
+      <section class="grid lg:grid-cols-2 gap-6 items-stretch">
+        <div class="surface rounded-[2rem] p-7 md:p-10 reveal">
+          <div class="chip">Account</div>
+          <h1 class="mt-5 text-3xl md:text-5xl font-black tracking-tight">
+            Sign up to <span class="grad-text">get started.</span>
+          </h1>
+          <p class="mt-4 text-white/65 text-lg">
+            Explore premium coconut coir products that improve soil quality, boost water retention, and support healthier plant growth.
+          </p>
+
+          <div class="mt-7 grid sm:grid-cols-2 gap-3">
+            <button class="btn btn-ghost py-4 w-full justify-center" type="button" data-cc-social aria-label="Continue with Google (placeholder)">
+              Continue with Google
+            </button>
+            <button class="btn btn-ghost py-4 w-full justify-center" type="button" data-cc-social aria-label="Continue with Facebook (placeholder)">
+              Continue with Facebook
+            </button>
+          </div>
+
+          <div class="hairline border-t mt-7 pt-7 text-white/60">
+            Already have an account? <a class="link" href="login.html">Sign in</a>.
+          </div>
+        </div>
+
+        <div class="surface rounded-[2rem] p-7 md:p-10 reveal" data-cc-register>
+          <h2 class="text-2xl font-bold">Registration</h2>
+          <p class="mt-2 text-white/65">Use a password with 6+ characters.</p>
+
+          <form class="mt-6 space-y-4" aria-label="Registration form">
+            <div>
+              <label class="text-white/70 text-sm" for="name">Name</label>
+              <input id="name" class="field mt-2" autocomplete="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label class="text-white/70 text-sm" for="email">Email</label>
+              <input id="email" class="field mt-2" type="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label class="text-white/70 text-sm" for="password">Password</label>
+              <input id="password" class="field mt-2" type="password" autocomplete="new-password" placeholder="Create a password" required />
+            </div>
+
+            <button class="btn btn-primary w-full py-4" type="submit">Create account</button>
+            <div class="text-white/55 text-sm" data-cc-note aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer data-cc-footer></footer>
+
+    <script type="module">
+      import { initPage } from "./app.js";
+      initPage();
+    </script>
+  </body>
+</html>
+
