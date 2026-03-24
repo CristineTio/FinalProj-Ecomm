@@ -263,7 +263,7 @@ export function mountFooter() {
 
           <!-- Copyright -->
           <div class="text-white/50 text-xs">
-            © ${year} ${BRAND.name}
+            For educational use only, no copyright intended.
           </div>
 
         </div>
